@@ -6,48 +6,54 @@
   <title>Portafolio | Luis Enrique</title>
   <!-- DaisyUI + Tailwind (CDN) -->
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-  <link rel="icon" href="diseno.png" type="image/png">
+  <link rel="icon" href="diseno.png" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
 <body class="bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-100">
   <!-- Header / Navbar -->
   <header class="sticky top-0 z-50 backdrop-blur bg-white/70 dark:bg-slate-950/70 border-b border-slate-200/60 dark:border-slate-800">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-      <!-- Logo -->
-      <a href="#" class="flex items-center gap-3">
-        <img src="idea-creativa.png" alt="Logo" class="w-9 h-9 rounded-xl">
-        <span class="font-semibold">Luis Developer</span>
-      </a>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-3">
+      <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-brand-600 text-white font-bold">
+        <img src="idea-creativa.png" alt="Logo">
+      </span>
+      <span class="font-semibold">Luis Developer</span>
+    </a>
 
-      <!-- Navegación desktop -->
-      <nav class="hidden md:flex items-center gap-6">
-        <a href="#inicio" class="link-primary">Inicio</a>
-        <a href="#proyectos" class="link-primary">Proyectos</a>
-        <a href="#habilidades" class="link-primary">Habilidades</a>
-        <a href="#experiencia" class="link-primary">Experiencia</a>
-        <a href="#contacto" class="link-primary">Contacto</a>
-      </nav>
+    <!-- Navegación escritorio -->
+    <nav class="hidden md:flex items-center gap-6">
+      <a href="#inicio" class="link-primary">Inicio</a>
+      <a href="#proyectos" class="link-primary">Proyectos</a>
+      <a href="#habilidades" class="link-primary">Habilidades</a>
+      <a href="#experiencia" class="link-primary">Experiencia</a>
+      <a href="#contacto" class="link-primary">Contacto</a>
+    </nav>
 
-      <!-- Botón móvil -->
-      <button id="menuBtn" class="md:hidden p-2 rounded-xl border border-slate-200 dark:border-slate-800">
+    <!-- Botones móviles -->
+    <div class="flex items-center gap-2 md:hidden">
+      <!-- Botón menú hamburguesa -->
+      <button id="menuBtn" class="rounded-xl border border-slate-200 dark:border-slate-800 px-3 py-2 text-sm">
         ☰
       </button>
     </div>
+  </div>
 
-    <!-- Menú móvil -->
-    <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800">
-      <nav class="px-4 py-3 flex flex-col gap-3">
-        <a href="#inicio" class="link-primary">Inicio</a>
-        <a href="#proyectos" class="link-primary">Proyectos</a>
-        <a href="#habilidades" class="link-primary">Habilidades</a>
-        <a href="#experiencia" class="link-primary">Experiencia</a>
-        <a href="#contacto" class="link-primary">Contacto</a>
-      </nav>
-    </div>
-  </header>
+  <!-- Menú móvil desplegable -->
+  <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 dark:border-slate-800">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex flex-col gap-3">
+      <a href="#inicio" class="link-primary">Inicio</a>
+      <a href="#proyectos" class="link-primary">Proyectos</a>
+      <a href="#habilidades" class="link-primary">Habilidades</a>
+      <a href="#experiencia" class="link-primary">Experiencia</a>
+      <a href="#contacto" class="link-primary">Contacto</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- Hero -->
+<!-- Hero -->
   <section id="inicio" class="px-6 py-12">
     <div class="flex flex-col-reverse lg:flex-row items-center gap-10">
       <!-- Texto -->
@@ -99,16 +105,203 @@
     </div>
   </section>
 
-  <!-- Aquí siguen tus secciones de proyectos, habilidades, experiencia, contacto, footer (ya son responsivas con grid de Tailwind) -->
+
+  <!-- Projects -->
+  <section id="proyectos" class="bg-slate-50 dark:bg-slate-900/30 border-y border-slate-200/60 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+
+      <!-- Header -->
+      <div class="flex items-end justify-between gap-4 mb-10">
+        <h2 class="text-3xl font-bold">Proyectos destacados</h2>
+        <div>
+          <label class="sr-only" for="search">Buscar</label>
+          <input id="search"
+                 type="search"
+                 placeholder="Buscar proyecto…"
+                 class="rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-4 py-2 text-sm"
+                 oninput="filterProjects(this.value)">
+        </div>
+      </div>
+
+      <!-- Grid de proyectos -->
+      <div id="projects-grid" class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+        <!-- Proyecto 1 -->
+        <article class="project-card card bg-base-100 shadow-sm" data-title="E-commerce">
+          <figure class="px-6 pt-6">
+            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                 alt="E-commerce" class="rounded-xl" />
+          </figure>
+          <div class="card-body text-center hover:shadow-lg transition">
+            <h3 class="card-title">E-commerce</h3>
+            <p>Tienda en línea con carrito de compras y pagos integrados.</p>
+            <div class="card-actions justify-center">
+              <a href="#" class="btn btn-outline btn-primary">Ver proyecto</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyecto 2 -->
+        <article class="project-card card bg-base-100 shadow-sm" data-title="Dashboard Admin">
+          <figure class="px-6 pt-6">
+            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                 alt="Dashboard Admin" class="rounded-xl" />
+          </figure>
+          <div class="card-body text-center hover:shadow-lg transition">
+            <h3 class="card-title">Dashboard Admin</h3>
+            <p>Panel de control con gráficas dinámicas y gestión de usuarios.</p>
+            <div class="card-actions justify-center">
+              <a href="#" class="btn btn-outline btn-primary">Ver proyecto</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyecto 3 -->
+        <article class="project-card card bg-base-100 shadow-sm" data-title="Blog Personal">
+          <figure class="px-6 pt-6">
+            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                 alt="Blog Personal" class="rounded-xl" />
+          </figure>
+          <div class="card-body text-center hover:shadow-lg transition">
+            <h3 class="card-title">Blog Personal</h3>
+            <p>Plataforma de publicaciones con editor Markdown y comentarios.</p>
+            <div class="card-actions justify-center">
+              <a href="#" class="btn btn-outline btn-primary">Ver proyecto</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Habilidades -->
+  <section id="habilidades" class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+    <h2 class="text-3xl font-bold">Habilidades</h2>
+
+    <!-- Grid general -->
+    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+      <!-- Card 1 -->
+      <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5 hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">HTML & CSS</h3>
+        <p>Experiencia en maquetación semántica, responsive design y animaciones con CSS3.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5 hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">JavaScript</h3>
+        <p>Manejo de ES6+, asincronía, manipulación del DOM y consumo de APIs.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5 hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">React & Vue</h3>
+        <p>Creación de interfaces dinámicas y manejo de estado en aplicaciones modernas.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5 hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">Tailwind CSS</h3>
+        <p>Diseño rápido y limpio con utilidades, integración con DaisyUI y componentes reutilizables.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Experiencia -->
+  <section id="experiencia" class="bg-slate-50 dark:bg-slate-900/30 border-y border-slate-200/60 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+      <h2 class="text-3xl font-bold">Experiencia</h2>
+
+      <div class="mt-8 space-y-6">
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h3 class="font-semibold">Desarrollador Full-Stack — Proyecto Gestión Académica</h3>
+            <span class="text-sm text-slate-500 dark:text-slate-400">2024 — 2025</span>
+          </div>
+          <ul class="mt-3 list-disc list-inside text-sm text-slate-600 dark:text-slate-300 space-y-1">
+            <li>Diseñé formularios con Tailwind + DaisyUI y sesiones PHP.</li>
+            <li>Implementé CRUD y modales accesibles.</li>
+            <li>Optimicé consultas MySQL y estructura MVC.</li>
+          </ul>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h3 class="font-semibold">Desarrollador Java — Banco Swing</h3>
+            <span class="text-sm text-slate-500 dark:text-slate-400">2023 — 2024</span>
+          </div>
+          <ul class="mt-3 list-disc list-inside text-sm text-slate-600 dark:text-slate-300 space-y-1">
+            <li>Interfaz de escritorio con Java Swing, patrón MVC.</li>
+            <li>Módulos de cuentas, saldos y búsquedas.</li>
+            <li>Pruebas unitarias y documentación técnica.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contacto" class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+    <div class="grid lg:grid-cols-2 gap-10">
+      <div>
+        <h2 class="text-3xl font-bold">Contacto</h2>
+        <p class="mt-3 text-slate-600 dark:text-slate-300">¿Tienes un proyecto en mente? Conversemos.</p>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li><strong>Email:</strong> luis@example.com</li>
+          <li><strong>Ubicación:</strong> Bogotá, Colombia</li>
+        </ul>
+      </div>
+
+      <form class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6 bg-white dark:bg-slate-950"
+            onsubmit="event.preventDefault(); alert('¡Gracias! Me pondré en contacto pronto.');">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="text-sm" for="name">Nombre</label>
+            <input id="name" name="name" required
+                   class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-4 py-2" />
+          </div>
+          <div>
+            <label class="text-sm" for="email">Email</label>
+            <input id="email" name="email" type="email" required
+                   class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-4 py-2" />
+          </div>
+        </div>
+
+        <div class="mt-4">
+          <label class="text-sm" for="message">Mensaje</label>
+          <textarea id="message" name="message" rows="5" required
+                    class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-4 py-2"></textarea>
+        </div>
+
+        <!-- Botón de envío: uso de DaisyUI para consistencia -->
+        <button type="submit" class="mt-4 w-full btn w-64 rounded-full btn btn-outline btn-primary">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 text-sm text-slate-500 dark:text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p>© <span id="year"></span> Luis Developer. Todos los derechos reservados.</p>
+      <div class="flex gap-4">
+        <a href="#" class="link-primary">Política de privacidad</a>
+        <a href="#" class="link-primary">Términos</a>
+      </div>
+    </div>
+  </footer>
 
   <!-- Scripts -->
   <script>
-    // Menú móvil
-    document.getElementById("menuBtn").addEventListener("click", () => {
-      document.getElementById("mobileMenu").classList.toggle("hidden");
-    });
+    // Script menú móvil 
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
 
-    // Filtro proyectos
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+    // Filtro de proyectos (busca en data-title y contenido del card)
     function filterProjects(query) {
       query = (query || '').toLowerCase().trim();
       document.querySelectorAll(".project-card").forEach(card => {
@@ -119,8 +312,13 @@
       });
     }
 
-    // Año dinámico
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Rellenar año dinámicamente en el footer
+    (function setYear() {
+      const y = new Date().getFullYear();
+      const el = document.getElementById('year');
+      if (el) el.textContent = y;
+    })();
   </script>
+
 </body>
 </html>
