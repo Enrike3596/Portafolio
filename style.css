@@ -1,0 +1,13 @@
+
+    /* Smooth underline animation */
+    .link-primary {
+        color: rgb(10, 7, 7);
+      background-image: linear-gradient(currentColor, currentColor);
+      background-size: 0% 2px;
+      background-position: 0 100%;
+      background-repeat: no-repeat;
+      transition: background-size .2s ease-in-out;
+    }
+    .link-primary:hover { background-size: 100% 2px; 
+      color: rgb(59, 130, 246);
+    }
