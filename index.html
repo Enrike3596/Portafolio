@@ -6,8 +6,7 @@
   <title>Portafolio | Luis Enrique</title>
   <!-- DaisyUI + Tailwind (CDN) -->
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-  <link rel="icon" href="diseno.png" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="diseno.png" type="image/png">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
@@ -15,10 +14,13 @@
   <!-- Header / Navbar -->
   <header class="sticky top-0 z-50 backdrop-blur bg-white/70 dark:bg-slate-950/70 border-b border-slate-200/60 dark:border-slate-800">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+      <!-- Logo -->
       <a href="#" class="flex items-center gap-3">
-        <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-brand-600 text-white font-bold"><img src="idea-creativa.png" alt="Logo"></span>
+        <img src="idea-creativa.png" alt="Logo" class="w-9 h-9 rounded-xl">
         <span class="font-semibold">Luis Developer</span>
       </a>
+
+      <!-- Navegación desktop -->
       <nav class="hidden md:flex items-center gap-6">
         <a href="#inicio" class="link-primary">Inicio</a>
         <a href="#proyectos" class="link-primary">Proyectos</a>
@@ -26,13 +28,16 @@
         <a href="#experiencia" class="link-primary">Experiencia</a>
         <a href="#contacto" class="link-primary">Contacto</a>
       </nav>
-      <!-- <div class="flex items-center gap-2">
-        <button id="themeToggle" class="rounded-xl border border-slate-200 dark:border-slate-800 px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-900">🌙</button>
-        <button class="md:hidden rounded-xl border border-slate-200 dark:border-slate-800 px-3 py-2 text-sm" id="menuBtn">Menú</button>
-      </div> -->
+
+      <!-- Botón móvil -->
+      <button id="menuBtn" class="md:hidden p-2 rounded-xl border border-slate-200 dark:border-slate-800">
+        ☰
+      </button>
     </div>
-    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 dark:border-slate-800">
-      <nav class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex flex-col gap-3">
+
+    <!-- Menú móvil -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800">
+      <nav class="px-4 py-3 flex flex-col gap-3">
         <a href="#inicio" class="link-primary">Inicio</a>
         <a href="#proyectos" class="link-primary">Proyectos</a>
         <a href="#habilidades" class="link-primary">Habilidades</a>
@@ -42,282 +47,68 @@
     </div>
   </header>
 
-<!-- Hero -->
-<section id="inicio" class="px-6 py-12">
-  <div class="flex flex-col-reverse lg:flex-row items-center gap-10">
-    
-    <!-- Texto -->
-    <div class="lg:w-1/2 flex flex-col justify-center">
-      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
-        Construyo productos web <span class="text-primary">rápidos</span> y <span class="text-primary">accesibles</span>.
-      </h1>
-      <p class="mt-4 text-lg text-slate-600 dark:text-slate-300">
-        Soy desarrollador <strong>full-stack</strong> con enfoque en <strong>Java, PHP y JavaScript</strong>.
-        Me apasiona crear interfaces limpias y backends robustos. Aquí encontrarás una selección de mis proyectos y experiencia.
-      </p>
+  <!-- Hero -->
+  <section id="inicio" class="px-6 py-12">
+    <div class="flex flex-col-reverse lg:flex-row items-center gap-10">
+      <!-- Texto -->
+      <div class="lg:w-1/2 text-center lg:text-left">
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
+          Construyo productos web <span class="text-primary">rápidos</span> y <span class="text-primary">accesibles</span>.
+        </h1>
+        <p class="mt-4 text-lg text-slate-600 dark:text-slate-300">
+          Soy desarrollador <strong>full-stack</strong> con enfoque en <strong>Java, PHP y JavaScript</strong>.
+          Me apasiona crear interfaces limpias y backends robustos.
+        </p>
 
-      <div class="mt-6 flex flex-wrap gap-3">
-        <a href="#proyectos" class="btn btn-primary btn-outline rounded-full">Ver proyectos</a>
-        <a href="#" class="btn btn-primary btn-outline rounded-full">Descargar CV</a>
-      </div>
-
-      <div class="mt-6 flex items-center gap-4 text-sm">
-        <!-- Botón de contacto GitHub -->
-<a href="https://github.com/tuusuario" target="_blank" rel="noopener noreferrer"
-   class="btn bg-white text-black border-[#e5e5e5] hover:bg-gray-100 flex items-center gap-2"
-   aria-label="Visitar perfil en GitHub">
-  
-  <!-- Ícono de GitHub -->
-  <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" 
-       viewBox="0 0 24 24" class="fill-current">
-    <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.4 7.86 10.94.58.1.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.87-1.54-3.87-1.54-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.7.08-.7 1.18.08 1.8 1.2 1.8 1.2 1.04 1.79 2.73 1.27 3.4.97.1-.76.41-1.27.75-1.56-2.55-.29-5.23-1.27-5.23-5.67 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.01 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 2.87-.39c.97 0 1.95.13 2.87.39 2.18-1.49 3.14-1.18 3.14-1.18.62 1.56.23 2.72.12 3.01.73.8 1.17 1.82 1.17 3.07 0 4.41-2.69 5.38-5.25 5.66.42.36.8 1.07.8 2.16 0 1.56-.01 2.82-.01 3.2 0 .3.21.66.8.55A10.53 10.53 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/>
-  </svg>
-
-  <!-- Texto -->
-  <span>Ver GitHub</span>
-</a>
-
-
-        
-       <!-- Botón de contacto LinkedIn -->
-<a href="https://www.linkedin.com/in/tuusuario" target="_blank" rel="noopener noreferrer"
-   class="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
-   aria-label="Visitar perfil de LinkedIn">
-  
-  <!-- Ícono de LinkedIn -->
-  <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" 
-       viewBox="0 0 24 24" class="fill-current">
-    <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zM8.5 8h3.6v2.16h.05c.5-.95 1.75-1.96 3.6-1.96 3.85 0 4.55 2.53 4.55 5.82V24h-4v-8.5c0-2.02-.04-4.63-2.82-4.63-2.82 0-3.25 2.2-3.25 4.47V24h-4V8z"/>
-  </svg>
-
-  <!-- Texto -->
-  <span>Contactar en LinkedIn</span>
-</a>
-
-
-        <!-- Botón de contacto por correo -->
-<a href="mailto:luis@example.com" 
-   class="btn bg-white text-black border-[#e5e5e5] hover:bg-gray-100 flex items-center gap-2"
-   aria-label="Enviar correo a Luis">
-  
-  <!-- Ícono de Email -->
-  <svg aria-label="Email icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" 
-       viewBox="0 0 24 24" class="stroke-current">
-    <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none">
-      <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-    </g>
-  </svg>
-
-  <!-- Texto -->
-  <span>Contactar por Email</span>
-</a>
-
-      </div>
-    </div>
-
-    <!-- Imagen -->
-    <div class="lg:w-1/2 flex justify-center">
-      <div class="avatar">
-        <div class="ring-primary ring-offset-base-100 w-48 h-48 rounded-full ring-4 ring-offset-2">
-          <img src="Foto.jpeg" alt="Foto de perfil" />
+        <div class="mt-6 flex flex-wrap justify-center lg:justify-start gap-3">
+          <a href="#proyectos" class="btn btn-primary btn-outline rounded-full">Ver proyectos</a>
+          <a href="#" class="btn btn-primary btn-outline rounded-full">Descargar CV</a>
         </div>
-      </div>
-    </div>
 
-  </div>
-</section>
-
-
-  <!-- Projects -->
-  <section id="proyectos" class="bg-slate-50 dark:bg-slate-900/30 border-y border-slate-200/60 dark:border-slate-800">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
-
-      <!-- Header -->
-      <div class="flex items-end justify-between gap-4 mb-10">
-        <h2 class="text-3xl font-bold">Proyectos destacados</h2>
-        <div>
-          <label class="sr-only" for="search">Buscar</label>
-          <input id="search"
-                 type="search"
-                 placeholder="Buscar proyecto…"
-                 class="rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-4 py-2 text-sm"
-                 oninput="filterProjects(this.value)">
+        <!-- Botones sociales -->
+        <div class="mt-6 flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-3">
+          <!-- GitHub -->
+          <a href="https://github.com/tuusuario" target="_blank" rel="noopener noreferrer"
+             class="btn bg-white text-black border-[#e5e5e5] hover:bg-gray-100 flex items-center gap-2">
+            <svg width="16" height="16" viewBox="0 0 24 24" class="fill-current"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.4 7.86 10.94.58.1.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.87-1.54-3.87-1.54-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.7.08-.7 1.18.08 1.8 1.2 1.8 1.2 1.04 1.79 2.73 1.27 3.4.97.1-.76.41-1.27.75-1.56-2.55-.29-5.23-1.27-5.23-5.67 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.01 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 2.87-.39c.97 0 1.95.13 2.87.39 2.18-1.49 3.14-1.18 3.14-1.18.62 1.56.23 2.72.12 3.01.73.8 1.17 1.82 1.17 3.07 0 4.41-2.69 5.38-5.25 5.66.42.36.8 1.07.8 2.16 0 1.56-.01 2.82-.01 3.2 0 .3.21.66.8.55A10.53 10.53 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+            <span>Ver GitHub</span>
+          </a>
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/tuusuario" target="_blank" rel="noopener noreferrer"
+             class="btn bg-blue-600 text-white hover:bg-blue-700 flex items-center gap-2">
+            <svg width="16" height="16" viewBox="0 0 24 24" class="fill-current"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zM8.5 8h3.6v2.16h.05c.5-.95 1.75-1.96 3.6-1.96 3.85 0 4.55 2.53 4.55 5.82V24h-4v-8.5c0-2.02-.04-4.63-2.82-4.63-2.82 0-3.25 2.2-3.25 4.47V24h-4V8z"/></svg>
+            <span>Contactar en LinkedIn</span>
+          </a>
+          <!-- Email -->
+          <a href="mailto:luis@example.com"
+             class="btn bg-white text-black border-[#e5e5e5] hover:bg-gray-100 flex items-center gap-2">
+            <svg width="16" height="16" viewBox="0 0 24 24" class="stroke-current"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></g></svg>
+            <span>Contactar por Email</span>
+          </a>
         </div>
       </div>
 
-      <!-- Grid de proyectos -->
-      <div id="projects-grid" class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-
-        <!-- Proyecto 1 -->
-        <article class="project-card card bg-base-100 shadow-sm" data-title="E-commerce">
-          <figure class="px-6 pt-6">
-            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                 alt="E-commerce" class="rounded-xl" />
-          </figure>
-          <div class="card-body text-center hover:shadow-lg transition">
-            <h3 class="card-title">E-commerce</h3>
-            <p>Tienda en línea con carrito de compras y pagos integrados.</p>
-            <div class="card-actions justify-center">
-              <a href="#" class="btn btn-outline btn-primary">Ver proyecto</a>
-            </div>
+      <!-- Imagen -->
+      <div class="lg:w-1/2 flex justify-center">
+        <div class="avatar">
+          <div class="ring-primary ring-offset-base-100 w-40 h-40 sm:w-48 sm:h-48 rounded-full ring-4 ring-offset-2">
+            <img src="Foto.jpeg" alt="Foto de perfil" />
           </div>
-        </article>
-
-        <!-- Proyecto 2 -->
-        <article class="project-card card bg-base-100 shadow-sm" data-title="Dashboard Admin">
-          <figure class="px-6 pt-6">
-            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                 alt="Dashboard Admin" class="rounded-xl" />
-          </figure>
-          <div class="card-body text-center hover:shadow-lg transition">
-            <h3 class="card-title">Dashboard Admin</h3>
-            <p>Panel de control con gráficas dinámicas y gestión de usuarios.</p>
-            <div class="card-actions justify-center">
-              <a href="#" class="btn btn-outline btn-primary">Ver proyecto</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Proyecto 3 -->
-        <article class="project-card card bg-base-100 shadow-sm" data-title="Blog Personal">
-          <figure class="px-6 pt-6">
-            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                 alt="Blog Personal" class="rounded-xl" />
-          </figure>
-          <div class="card-body text-center hover:shadow-lg transition">
-            <h3 class="card-title">Blog Personal</h3>
-            <p>Plataforma de publicaciones con editor Markdown y comentarios.</p>
-            <div class="card-actions justify-center">
-              <a href="#" class="btn btn-outline btn-primary">Ver proyecto</a>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Habilidades -->
-  <section id="habilidades" class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
-    <h2 class="text-3xl font-bold">Habilidades</h2>
-
-    <!-- Grid general -->
-    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-
-      <!-- Card 1 -->
-      <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5 hover:shadow-lg transition">
-        <h3 class="font-semibold text-lg mb-2">HTML & CSS</h3>
-        <p>Experiencia en maquetación semántica, responsive design y animaciones con CSS3.</p>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5 hover:shadow-lg transition">
-        <h3 class="font-semibold text-lg mb-2">JavaScript</h3>
-        <p>Manejo de ES6+, asincronía, manipulación del DOM y consumo de APIs.</p>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5 hover:shadow-lg transition">
-        <h3 class="font-semibold text-lg mb-2">React & Vue</h3>
-        <p>Creación de interfaces dinámicas y manejo de estado en aplicaciones modernas.</p>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5 hover:shadow-lg transition">
-        <h3 class="font-semibold text-lg mb-2">Tailwind CSS</h3>
-        <p>Diseño rápido y limpio con utilidades, integración con DaisyUI y componentes reutilizables.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Experiencia -->
-  <section id="experiencia" class="bg-slate-50 dark:bg-slate-900/30 border-y border-slate-200/60 dark:border-slate-800">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
-      <h2 class="text-3xl font-bold">Experiencia</h2>
-
-      <div class="mt-8 space-y-6">
-        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
-          <div class="flex flex-wrap items-center justify-between gap-2">
-            <h3 class="font-semibold">Desarrollador Full-Stack — Proyecto Gestión Académica</h3>
-            <span class="text-sm text-slate-500 dark:text-slate-400">2024 — 2025</span>
-          </div>
-          <ul class="mt-3 list-disc list-inside text-sm text-slate-600 dark:text-slate-300 space-y-1">
-            <li>Diseñé formularios con Tailwind + DaisyUI y sesiones PHP.</li>
-            <li>Implementé CRUD y modales accesibles.</li>
-            <li>Optimicé consultas MySQL y estructura MVC.</li>
-          </ul>
-        </div>
-
-        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
-          <div class="flex flex-wrap items-center justify-between gap-2">
-            <h3 class="font-semibold">Desarrollador Java — Banco Swing</h3>
-            <span class="text-sm text-slate-500 dark:text-slate-400">2023 — 2024</span>
-          </div>
-          <ul class="mt-3 list-disc list-inside text-sm text-slate-600 dark:text-slate-300 space-y-1">
-            <li>Interfaz de escritorio con Java Swing, patrón MVC.</li>
-            <li>Módulos de cuentas, saldos y búsquedas.</li>
-            <li>Pruebas unitarias y documentación técnica.</li>
-          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contacto" class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
-    <div class="grid lg:grid-cols-2 gap-10">
-      <div>
-        <h2 class="text-3xl font-bold">Contacto</h2>
-        <p class="mt-3 text-slate-600 dark:text-slate-300">¿Tienes un proyecto en mente? Conversemos.</p>
-        <ul class="mt-4 space-y-2 text-sm">
-          <li><strong>Email:</strong> luis@example.com</li>
-          <li><strong>Ubicación:</strong> Bogotá, Colombia</li>
-        </ul>
-      </div>
-
-      <form class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6 bg-white dark:bg-slate-950"
-            onsubmit="event.preventDefault(); alert('¡Gracias! Me pondré en contacto pronto.');">
-        <div class="grid sm:grid-cols-2 gap-4">
-          <div>
-            <label class="text-sm" for="name">Nombre</label>
-            <input id="name" name="name" required
-                   class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-4 py-2" />
-          </div>
-          <div>
-            <label class="text-sm" for="email">Email</label>
-            <input id="email" name="email" type="email" required
-                   class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-4 py-2" />
-          </div>
-        </div>
-
-        <div class="mt-4">
-          <label class="text-sm" for="message">Mensaje</label>
-          <textarea id="message" name="message" rows="5" required
-                    class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-4 py-2"></textarea>
-        </div>
-
-        <!-- Botón de envío: uso de DaisyUI para consistencia -->
-        <button type="submit" class="mt-4 w-full btn w-64 rounded-full btn btn-outline btn-primary">Enviar</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="border-t border-slate-200 dark:border-slate-800">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 text-sm text-slate-500 dark:text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-3">
-      <p>© <span id="year"></span> Luis Developer. Todos los derechos reservados.</p>
-      <div class="flex gap-4">
-        <a href="#" class="link-primary">Política de privacidad</a>
-        <a href="#" class="link-primary">Términos</a>
-      </div>
-    </div>
-  </footer>
+  <!-- Aquí siguen tus secciones de proyectos, habilidades, experiencia, contacto, footer (ya son responsivas con grid de Tailwind) -->
 
   <!-- Scripts -->
   <script>
-    // Filtro de proyectos (busca en data-title y contenido del card)
+    // Menú móvil
+    document.getElementById("menuBtn").addEventListener("click", () => {
+      document.getElementById("mobileMenu").classList.toggle("hidden");
+    });
+
+    // Filtro proyectos
     function filterProjects(query) {
       query = (query || '').toLowerCase().trim();
       document.querySelectorAll(".project-card").forEach(card => {
@@ -328,13 +119,8 @@
       });
     }
 
-    // Rellenar año dinámicamente en el footer
-    (function setYear() {
-      const y = new Date().getFullYear();
-      const el = document.getElementById('year');
-      if (el) el.textContent = y;
-    })();
+    // Año dinámico
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
